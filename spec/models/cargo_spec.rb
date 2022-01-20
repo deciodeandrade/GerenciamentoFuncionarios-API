@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Cargo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it{is_expected.to validate_presence_of(:descricao)}
+  it {is_expected.to validate_uniqueness_of(:descricao).case_insensitive}
+  it{is_expected.to validate_presence_of(:atividades)}
 end
